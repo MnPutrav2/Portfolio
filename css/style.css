@@ -1,0 +1,518 @@
+:root {
+    --background-color: rgb(11, 27, 43);
+    --background-color-2: rgb(16, 40, 63);
+    --background-transparent: rgba(0, 126, 164, 0.198);
+    --font-color-secondary-3:  rgba(0, 73, 129, 0.461);
+    --font-color-secondary-4:  rgb(0, 109, 193);
+    --font-color:  white;
+    --font-color-secondary:  rgb(141, 141, 141);
+    --font-color-secondary-2:  rgb(0, 145, 255);
+    --shadow: rgba(0, 0, 0, 0.464);
+    --shadow-2: rgba(0, 153, 255, 0.211);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Manrope-regular";
+    src: url("../assets/fonts/Manrope-Regular.ttf");
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Manrope-regular';
+    color: var(--font-color);
+}
+
+.first {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first > .text-box {
+    width: 50%;
+    z-index: 1;
+}
+
+.first > .text-box >  .text > h1, .first > .text-box > .text > .detail > p {
+    margin-left: 8rem;
+    z-index: -1;
+}
+
+.first > .text-box > .text > h1 {
+    animation: top-slide 0.5s linear;
+}
+
+.first > .text-box > .text > .detail > p {
+    animation: bottom-slide 0.5s linear;
+}
+
+.first > .text-box > .text > h1:nth-child(1)::before {
+    content: "";
+    width: 2rem;
+    height: 0.3rem;
+    position: absolute;
+    background-color: var(--font-color);
+} 
+
+.first > .text-box > .text > h1:nth-child(2) {
+    color: var(--font-color-secondary-2);
+    font-size: 2.5rem;
+} 
+
+.first > .text-box > .text > .detail > p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.first > .text-box > .text > .detail {
+    width: 70%;
+    color: var(--font-color-secondary);
+    text-align: justify;
+}
+
+.first > .img-box {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.first > .img-box > img {
+    width: 50%;
+    filter: drop-shadow(5px 5px 5px var(--shadow));
+    animation: opacity 0.5s linear;
+}
+
+.ribbon {
+    width: 100%;
+    height: 10rem;
+    bottom: -6rem;
+    position: absolute;
+    overflow: hidden;
+}
+
+.ribbon > .group {
+    width: 200rem;
+    height: 5rem;
+    background-color: var(--background-color-2);
+    box-shadow: 1px 1px 15px 1px var(--shadow);
+    rotate: -1.5deg;
+}
+
+.ribbon > .group > .carousel {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
+    width: 1250px;
+    height: 50%;
+}
+
+.first > .text-box-2 {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.first > .text-box-2 > div > .box-content {
+    margin: 1rem;
+    width: 10rem;
+    padding: 1rem;
+    color: var(--font-color-secondary);
+    border-bottom: 1px solid var(--font-color-secondary);
+    text-align: justify;
+    animation: right-slide 0.5s linear;
+}
+
+.first > .text-box-2 > div > .box-content > a {
+    color: var(--font-color);
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+.first > .text-box-2 > div > .box-content > a::before {
+    content: "";
+    width: 0.2rem;
+    height: 1.5rem;
+    margin-left: -0.5rem;
+    position: absolute;
+    background-color: var(--font-color);
+}
+
+.first > .text-box-2 > div > .box-content:hover {
+    background-color: var(--shadow-2);
+    box-shadow: 1px 1px 15px 5px var(--shadow-2);
+}
+
+.first > .text-box-2 >div >  .box-content > p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.float-menu {
+    position: fixed;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 99;
+}
+
+.float-menu > div {
+    border-radius: 2rem;
+    background-color: var(--background-transparent);
+    border-left: 5px solid var(--font-color-secondary-2);
+    border-right: 5px solid var(--font-color-secondary-2);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 15px 5px var(--shadow-2);
+}
+
+.float-menu > div > a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--font-color);
+    margin: 1rem 2rem 1rem 2rem;
+    transition: all 0.2s linear;
+}
+
+.float-menu > div > a:hover {
+    transform: translateY(-0.2rem);
+}
+
+.box {
+    position: fixed;
+    width: 10rem;
+    height: 100vh;
+    left: 10rem;
+    z-index: -1;
+    background-image: linear-gradient(to top, var(--background-color-2), transparent);
+    animation: left-slide 0.5s linear;
+}
+
+.social {
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    display: flex;
+    animation: bottom-slide 0.5s linear;
+}
+
+.social > .icon > svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+    fill: var(--font-color-secondary-3);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.social > .icon {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.social > .icon > .title {
+    font-size: 0.7rem;
+    margin-top: -3rem;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    padding-top: 0.3rem;
+}
+
+.title-text {
+    font-size: 3rem;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.title-text::before {
+    content: attr(child);
+    position: absolute;
+    margin-left: 6.5rem;
+    z-index: -1;
+    margin-top: 1rem;
+    color: var(--font-color-secondary-4);
+}
+
+.title-text::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    margin-top: 4.5rem;
+    height: 0.2rem;
+    background-color: var(--font-color);
+}
+
+.title-text-2 {
+    font-size: 3rem;
+    margin: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.title-text-2::before {
+    content: attr(child);
+    position: absolute;
+    margin-left: 3.5rem;
+    z-index: -1;
+    margin-top: 3rem;
+    color: var(--font-color-secondary-4);
+}
+
+.title-text-2::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    margin-top: 6.5rem;
+    height: 0.2rem;
+    background-color: var(--font-color);
+}
+
+#skill {
+    margin-top: 10rem;
+}
+
+#skill > .text, #project > .text {
+    padding: 1rem;
+    margin-top: 5rem;
+    width: 50%;
+    text-align: justify;
+}
+
+#project {
+    margin-top: 20rem;
+}
+
+.skill {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.skill .information {
+    position: absolute;
+    width: 10rem;
+    height: 5rem;
+    z-index: 1;
+    border-radius: 1rem;
+    background-color: var(--background-transparent);
+    backdrop-filter: blur(5px);
+    border-left: 5px solid var(--font-color-secondary-2);
+    border-right: 5px solid var(--font-color-secondary-2);
+    box-shadow: 1px 1px 5px 3px var(--shadow-2);
+    transition: all 0.2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.skill img {
+    width: 5rem;
+    fill: var(--font-color-secondary-4);
+    margin: 3rem;
+    transition: all 0.2s linear;
+}
+
+.ball {
+    width: 5rem;
+    height: 5rem;
+    z-index: 1;
+    margin: 1rem;
+    margin-top: 2.5rem;
+    position: absolute;
+    border-radius: 100%;
+    background-color: var(--background-transparent);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid var(--font-color);
+}
+
+.jumbo-text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.jumbo-text-child {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@media screen and (max-width: 720px) {
+    .first {
+        display: block;
+    }
+
+    .first > .text-box {
+        position: relative;
+        width: 100%;
+        height: 30vh;
+        margin-top: 5rem;
+    }
+
+    .first > .text-box > .text > h1 {
+        text-align: center;
+    }
+
+    .first > .text-box > .text > h1, .first > .text-box > .text > .detail > p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .first > .img-box > img {
+        width: 100%;
+    }
+
+    .first > .text-box > .text > .detail > p {
+        text-align: center;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .first > .text-box > .text > .detail {
+        width: 100%;
+    }
+
+    .first > .text-box-2 {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        margin-left: 0;
+        display: flex;
+        align-items: start;
+    }
+
+    .first > .text-box-2 > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .box {
+        inset: 0;
+        left: 1rem;
+    }
+
+    .social {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .skill {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .skill img {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #skill {
+        margin-top: 0rem;
+    }
+
+    #skill > .text, #project > .text {
+        margin-top: 6rem;
+        padding: 0rem;
+        width: 100%;
+    }
+
+    #skill > .text > p, #project > .text > p {
+        margin: 1rem;
+    }    
+}
+
+#text-change {
+    transition: all 0.2s linear;
+}
+
+@keyframes top-slide {
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bottom-slide {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes right-slide {
+    0% {
+        transform: translateX(2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes left-slide {
+    0% {
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
