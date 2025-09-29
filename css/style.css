@@ -1,14 +1,15 @@
 :root {
-    --background-color: rgb(11, 27, 43);
-    --background-color-2: rgb(16, 40, 63);
-    --background-transparent: rgba(0, 126, 164, 0.198);
-    --font-color-secondary-3:  rgba(0, 73, 129, 0.461);
-    --font-color-secondary-4:  rgb(0, 109, 193);
-    --font-color:  white;
+    --background-color: rgb(18, 18, 18);
+    --background-color-2: rgb(21, 21, 21);
+    --background-transparent: rgba(0, 164, 112, 0.198);
+    --font-color-secondary-3:  rgba(0, 129, 86, 0.461);
+    --font-color-secondary-4:  rgb(0, 193, 138);
+    --font-color:  rgb(255, 255, 255);
     --font-color-secondary:  rgb(141, 141, 141);
-    --font-color-secondary-2:  rgb(0, 145, 255);
+    --font-color-secondary-2:  rgb(0, 255, 162);
     --shadow: rgba(0, 0, 0, 0.464);
-    --shadow-2: rgba(0, 153, 255, 0.211);
+    --shadow-2: rgba(0, 255, 170, 0.211);
+    --glow: #00ffa28d;
 }
 
 * {
@@ -219,7 +220,6 @@ body {
     height: 2.5rem;
     margin: 0.5rem;
     fill: var(--font-color-secondary-3);
-    backdrop-filter: blur(2px);
     z-index: 1;
     transition: all 0.2s ease-in-out;
 }
@@ -368,6 +368,14 @@ body {
     color: transparent;
 }
 
+#text-change {
+    transition: all 0.2s linear;
+}
+
+#text-change > p {
+    animation: sl 0.5s linear;
+}
+
 @media screen and (max-width: 720px) {
     .first {
         display: block;
@@ -455,10 +463,6 @@ body {
     }    
 }
 
-#text-change {
-    transition: all 0.2s linear;
-}
-
 @keyframes top-slide {
     0% {
         transform: translateY(-2rem);
@@ -515,4 +519,13 @@ body {
 @keyframes slide {
     0% {transform: translateX(0);}
     100% {transform: translateX(-100%);}
+}
+
+@keyframes sl {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -1,10 +1,10 @@
 const text = document.getElementById("text-change")
 
 setInterval(() => {
-    text.innerText = "Web Programmer"
+    text.innerHTML = "<p>Web Programmer</p>"
 
     setTimeout(() => {
-        text.innerText = "Mobile Developer"
+        text.innerHTML = "<p>Web Designer</p>"
     }, 2000)
 
 }, 4000)
@@ -43,6 +43,7 @@ social.forEach((item) => {
 
         z.style.transform = 'translateY(-1rem)'
         z.style.fill = 'var(--font-color-secondary-4)'
+        z.style.filter = 'drop-shadow(0px 0px 3px var(--glow))'
     }
 
     x.onmouseout = () => {
@@ -51,18 +52,22 @@ social.forEach((item) => {
 
         z.style.transform = 'translateY(0rem)'
         z.style.fill = 'var(--font-color-secondary-3)'
+        z.style.filter = 'none'
     }
 })
 
-const code = ['html', 'css', 'ts', 'js', 'php', 'go']
+const code = ['html', 'css', 'typescript', 'javascript', 'php', 'golang', 'python']
 
 code.forEach((item) => {
+    
     const x = document.getElementById(item)
     const y = document.getElementById(`${item}-info`)
+    const z = document.getElementById(`${item}-img`)
 
     x.onmouseover = () => {
         y.style.transform = 'translateY(-2rem)'
         y.style.opacity = '1'
+        z.style.filter = 'drop-shadow(0px 0px 3px var(--glow))'
 
         x.style.transform = 'translateY(1rem)'
     }
@@ -70,6 +75,7 @@ code.forEach((item) => {
     x.onmouseout = () => {
         y.style.transform = 'translateY(0rem)'
         y.style.opacity = '0'
+        z.style.filter = 'none'
 
         x.style.transform = 'translateY(0rem)'
     }
