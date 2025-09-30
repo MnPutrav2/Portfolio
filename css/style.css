@@ -528,10 +528,12 @@ body {
     }
 
     .card-project .left-box > .title {
+        padding-top: 5rem;
         padding-left: 0rem;
     }
 
     .card-project .right-box > .title {
+        padding-top: 5rem;
         padding-right: 0rem;
     }
 }

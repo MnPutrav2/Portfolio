@@ -80,16 +80,29 @@ projectContent.forEach((item, index) => {
                     </div>
                 </div>`
     }else{
-        temp = `<div class="card-project">
-                    <div class="right-box">
-                        <div class="title">${item}</div>
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <div class="card">
-                                <div class="img-box"></div>
+        if(screen.width < 720){
+            temp = `<div class="card-project">
+                        <div class="right-box">
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div class="card">
+                                    <div class="img-box"></div>
+                                </div>
+                            </div>
+                            <div class="title">${item}</div>
+                        </div>
+                    </div>`
+        }else{
+            temp = `<div class="card-project">
+                        <div class="right-box">
+                            <div class="title">${item}</div>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div class="card">
+                                    <div class="img-box"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>`
+                    </div>`
+        }
     }
 
     project.insertAdjacentHTML('beforeend', temp)
