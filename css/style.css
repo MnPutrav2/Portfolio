@@ -518,6 +518,11 @@ body {
         margin: 1rem;
     }    
 
+    .card-project {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+
     .card-project .left-box, .card-project .right-box {
         display: block; 
     }
