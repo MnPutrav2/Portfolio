@@ -376,6 +376,62 @@ body {
     animation: sl 0.5s linear;
 }
 
+#project-data {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-project {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-project .card {
+    width: 15rem;
+    height: 18rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--background-color-2);
+    box-shadow: 1px 1px 5px 3px var(--shadow);
+    transition: all 0.2s linear;
+}
+
+.card-project .card:hover {
+    background-color: var(--background-transparent);
+    box-shadow: 1px 1px 5px 3px var(--shadow-2);
+    backdrop-filter: blur(5px);
+}
+
+.card-project .img-box {
+    width: 100%;
+    height: 70%;
+    background-color: red;
+    border-radius: 0.8rem;
+}
+
+.card-project .title {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.card-project .left-box, .card-project .right-box {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.card-project .left-box > .title {
+    padding-left: 5rem;
+}
+
+.card-project .right-box > .title {
+    padding-right: 5rem;
+}
+
 @media screen and (max-width: 720px) {
     .first {
         display: block;
@@ -461,6 +517,18 @@ body {
     #skill > .text > p, #project > .text > p {
         margin: 1rem;
     }    
+
+    .card-project .left-box, .card-project .right-box {
+        display: block; 
+    }
+
+    .card-project .left-box > .title {
+        padding-left: 0rem;
+    }
+
+    .card-project .right-box > .title {
+        padding-right: 0rem;
+    }
 }
 
 @keyframes top-slide {
