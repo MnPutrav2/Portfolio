@@ -1,13 +1,59 @@
 const text = document.getElementById("text-change")
 
-setInterval(() => {
-    text.innerHTML = "<p>Web Programmer</p>"
+// text change
+function changeText(item) {
+    item.forEach((c, index) => {
+        setTimeout(() => {
+            text.innerHTML = `<p>${c}</p>`
+        }, index * 2000)
+    })
 
-    setTimeout(() => {
-        text.innerHTML = "<p>Web Designer</p>"
-    }, 2000)
+    setInterval(() => {
+        text.innerHTML = `<p>${item[1]}</p>`
+        
+        item.forEach((c, index) => {
+            setTimeout(() => {
+                text.innerHTML = `<p>${c}</p>`
+            }, index * 2000)
+        })
 
-}, 4000)
+    }, item.length * 2000)
+}
+
+function showSkill(code) {
+    code.forEach((item) => {
+        const id = document.querySelector(".skill")
+        const temp = `<div id="${item}" style="transition: all 0.2s linear;">
+                        <div class="information" id="${item}-info">HTML</div>
+                        <img id="${item}-img" src="assets/images/${item}.svg" alt="">
+                    </div>`
+
+        id.insertAdjacentHTML("beforeend", temp)
+
+        const x = document.getElementById(item)
+        const y = document.getElementById(`${item}-info`)
+        const z = document.getElementById(`${item}-img`)
+
+        x.onmouseover = () => {
+            y.style.transform = 'translateY(-2rem)'
+            y.style.opacity = '1'
+            z.style.filter = 'drop-shadow(0px 0px 3px var(--glow))'
+
+            x.style.transform = 'translateY(1rem)'
+        }
+
+        x.onmouseout = () => {
+            y.style.transform = 'translateY(0rem)'
+            y.style.opacity = '0'
+            z.style.filter = 'none'
+
+            x.style.transform = 'translateY(0rem)'
+        }
+    })
+}
+
+showSkill(['html', 'css', 'typescript', 'javascript', 'php', 'golang', 'python'])
+changeText(["WEB Designer", "WEB Programmer", "Mobile DEV"])
 
 const social = ['fb', 'ig', 'ln']
 
@@ -32,31 +78,6 @@ social.forEach((item) => {
         z.style.transform = 'translateY(0rem)'
         z.style.fill = 'var(--font-color-secondary-3)'
         z.style.filter = 'none'
-    }
-})
-
-const code = ['html', 'css', 'typescript', 'javascript', 'php', 'golang', 'python']
-
-code.forEach((item) => {
-    
-    const x = document.getElementById(item)
-    const y = document.getElementById(`${item}-info`)
-    const z = document.getElementById(`${item}-img`)
-
-    x.onmouseover = () => {
-        y.style.transform = 'translateY(-2rem)'
-        y.style.opacity = '1'
-        z.style.filter = 'drop-shadow(0px 0px 3px var(--glow))'
-
-        x.style.transform = 'translateY(1rem)'
-    }
-
-    x.onmouseout = () => {
-        y.style.transform = 'translateY(0rem)'
-        y.style.opacity = '0'
-        z.style.filter = 'none'
-
-        x.style.transform = 'translateY(0rem)'
     }
 })
 
