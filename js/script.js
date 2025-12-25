@@ -24,7 +24,7 @@ function showSkill(code) {
     code.forEach((item) => {
         const id = document.querySelector(".skill")
         const temp = `<div id="${item}" style="transition: all 0.2s linear;">
-                        <div class="information" id="${item}-info">HTML</div>
+                        <div class="information" id="${item}-info">${item.toUpperCase()}</div>
                         <img id="${item}-img" src="assets/images/${item}.svg" alt="">
                     </div>`
 
